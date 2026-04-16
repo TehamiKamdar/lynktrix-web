@@ -608,16 +608,10 @@ html {
   margin-bottom: 2rem;
 }
 
-.perks-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
 .perk-item {
   display: flex;
   align-items: center;
+  margin-right: 8px;
   gap: 1rem;
   padding: 0.75rem 1rem;
   background: rgba(255, 255, 255, 0.03);
@@ -627,7 +621,6 @@ html {
 
 .perk-item:hover {
   background: rgba(194, 36, 55, 0.1);
-  transform: translateX(5px);
 }
 
 .perk-icon-circle {
