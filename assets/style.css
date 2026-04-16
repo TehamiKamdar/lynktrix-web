@@ -4,7 +4,8 @@
   --bs-bg-dark: #05071e;
   --bs-body-bg: #05071e;
   --bs-body-color: #f0f2f9;
-  --navbar-glass: #1e1b31;
+  --navbar-glass: #e6e6e6;
+  --nav-link-color: #1e1b31;
   --card-glass: rgba(12, 16, 40, 0.65);
   --transition-default: all 0.25s ease-in-out;
   --footer-bg: #020417;
@@ -145,7 +146,7 @@ h6,
 .navbar-custom .nav-link {
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
-  color: #eef2ff;
+  color: var(--nav-link-color);
   padding: 0.5rem 1rem;
   border-radius: 0px;
   font-size: 0.95rem;
@@ -531,7 +532,7 @@ html {
   width: 100%;
   max-width: 250px;
   height: auto;
-  filter: grayscale(30%);
+  filter: grayscale(100%);
   transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
   display: inline-block;
 }
@@ -577,7 +578,7 @@ html {
   transition: all 0.3s;
 }
 
-.publisher-badge {
+.lynktrix-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
