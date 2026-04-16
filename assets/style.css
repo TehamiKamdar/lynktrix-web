@@ -1419,3 +1419,158 @@ html {
     justify-content: center;
   }
 }
+
+/* ========== FAQ SECTION WITH PLUS/MINUS ICONS ========== */
+.faq-section {
+  background: radial-gradient(circle at 30% 10%, rgba(194, 36, 55, 0.05) 0%, #05071e 100%);
+}
+
+.faq-accordion {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.accordion-item {
+  background: rgba(10, 14, 40, 0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(194, 36, 55, 0.25);
+  border-radius: 20px !important;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  transition: all 0.2s;
+}
+
+.accordion-item:hover {
+  border-color: rgba(194, 36, 55, 0.5);
+}
+
+.accordion-header {
+  background: transparent;
+}
+
+.accordion-button {
+  background: rgba(10, 14, 40, 0.8);
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 1.2rem 1.5rem;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.accordion-button:not(.collapsed) {
+  background: rgba(194, 36, 55, 0.15);
+  color: var(--bs-accent);
+  box-shadow: none;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+  border-color: transparent;
+}
+
+/* Hide default Bootstrap arrow */
+.accordion-button::after {
+  display: none;
+}
+
+/* Custom plus/minus icon */
+.accordion-button .accordion-icon {
+  position: absolute;
+  right: 1.5rem;
+  font-size: 1.2rem;
+  transition: all 0.2s ease;
+  color: var(--bs-accent);
+}
+
+.accordion-button .accordion-icon .bi-plus-circle-fill,
+.accordion-button .accordion-icon .bi-dash-circle-fill {
+  font-size: 1.2rem;
+}
+
+.accordion-button.collapsed .accordion-icon .minus-icon {
+  display: none;
+}
+
+.accordion-button.collapsed .accordion-icon .plus-icon {
+  display: inline-block;
+}
+
+.accordion-button:not(.collapsed) .accordion-icon .plus-icon {
+  display: none;
+}
+
+.accordion-button:not(.collapsed) .accordion-icon .minus-icon {
+  display: inline-block;
+}
+
+.plus-icon,
+.minus-icon {
+  transition: all 0.2s;
+}
+
+.accordion-body {
+  background: rgba(5, 7, 30, 0.5);
+  color: rgba(255, 255, 255, 0.8);
+  padding: 1.2rem 1.5rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  border-top: 1px solid rgba(194, 36, 55, 0.15);
+}
+
+.faq-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+.faq-stat-item {
+  text-align: center;
+  padding: 1rem 1.5rem;
+  background: rgba(194, 36, 55, 0.08);
+  border-radius: 40px;
+  backdrop-filter: blur(4px);
+}
+
+.faq-stat-number {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--bs-accent);
+  font-family: 'Quicksand', sans-serif;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .advertiser-content {
+    padding: 1.5rem;
+  }
+
+  .contact-form-col,
+  .contact-details-col {
+    padding: 1.5rem;
+  }
+
+  .accordion-button {
+    padding: 1rem;
+    font-size: 0.85rem;
+    padding-right: 3rem;
+  }
+
+  .accordion-button .accordion-icon {
+    right: 1rem;
+  }
+
+  .faq-stat-item {
+    padding: 0.5rem 1rem;
+  }
+
+  .faq-stat-number {
+    font-size: 1.3rem;
+  }
+}

@@ -82,6 +82,24 @@
         });
       });
 
+      document.querySelectorAll('.accordion-button').forEach(button => {
+        button.addEventListener('click', function() {
+          const iconSpan = this.querySelector('.accordion-icon');
+          const plusIcon = iconSpan.querySelector('.plus-icon');
+          const minusIcon = iconSpan.querySelector('.minus-icon');
+          
+          if (this.classList.contains('collapsed')) {
+            // Expanding: show minus, hide plus
+            plusIcon.style.display = 'inline-block';
+            minusIcon.style.display = 'none';
+          } else {
+            // Collapsing: show plus, hide minus
+            plusIcon.style.display = 'none';
+            minusIcon.style.display = 'inline-block';
+          }
+        });
+      });
+
       const now = new Date();
       const year = now.getFullYear();
       const quarter = getQuarter(now.getMonth());
