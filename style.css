@@ -498,3 +498,68 @@ html {
     align-self: flex-start;
   }
 }
+
+/* ========== PARTNERS SECTION========== */
+.partners-section {
+  background: linear-gradient(135deg, rgba(194, 36, 55, 0.03) 0%, rgba(5, 7, 30, 1) 100%);
+}
+
+.partners-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.partner-item {
+  flex: 1 1 auto;
+  min-width: 120px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.partner-logo {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  filter: grayscale(90%);
+  transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  display: inline-block;
+}
+
+.partner-item:hover .partner-logo {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* For consistent sizing across logos, we use object-contain where needed */
+.partner-logo {
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .partners-grid {
+    justify-content: center;
+    gap: 1.8rem;
+  }
+
+  .partner-item {
+    min-width: 100px;
+  }
+
+  .partner-logo {
+    max-width: 100px;
+  }
+}
+
+@media (max-width: 576px) {
+  .partner-item {
+    min-width: calc(33% - 1rem);
+  }
+
+  .partner-logo {
+    max-width: 85px;
+  }
+}
