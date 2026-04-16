@@ -64,6 +64,24 @@
           return Math.floor(month / 3) + 1;
       }
 
+      $(document).ready(function(){
+        $("#reviewsCarousel").owlCarousel({
+          loop: true,
+          margin: 20,
+          nav: false,
+          dots: true,
+          autoplay: true,
+          autoplayTimeout: 2500,
+          autoplayHoverPause: true,
+          responsive: {
+            0: { items: 1 },
+            768: { items: 2 },
+            992: { items: 3 }
+          },
+          navText: ['<i class="ri-arrow-left-s-fill"></i>', '<i class="ri-arrow-right-s-fill"></i>']
+        });
+      });
+
       const now = new Date();
       const year = now.getFullYear();
       const quarter = getQuarter(now.getMonth());

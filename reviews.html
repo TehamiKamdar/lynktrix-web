@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Lynktrix | Reviews — Trusted by Advertisers & Publishers</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Bootstrap 5 CSS + Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <!-- Owl Carousel CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+  <style>
+    :root {
+      --bs-accent: #C22437;
+      --bs-accent-dark: #9e1b2c;
+      --bs-bg-dark: #05071e;
+      --bs-body-color: #f0f2f9;
+      --navbar-glass: rgba(5, 7, 30, 0.92);
+      --card-glass: rgba(12, 16, 40, 0.75);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background-color: var(--bs-bg-dark);
+      font-family: 'Poppins', sans-serif;
+      color: var(--bs-body-color);
+      scroll-behavior: smooth;
+      padding-top: 90px;
+    }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Quicksand', sans-serif; font-weight: 700; letter-spacing: -0.02em; }
+    .text-accent { color: var(--bs-accent) !important; }
+    .bg-accent { background-color: var(--bs-accent) !important; }
+    
+    .btn-accent {
+      background: linear-gradient(135deg, var(--bs-accent) 0%, var(--bs-accent-dark) 100%);
+      border: none;
+      color: white;
+      transition: all 0.3s ease;
+    }
+    .btn-accent:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(194, 36, 55, 0.4); color: white; }
+    .btn-outline-accent {
+      border: 1.5px solid var(--bs-accent);
+      color: var(--bs-accent);
+      background: transparent;
+      transition: all 0.3s ease;
+    }
+    .btn-outline-accent:hover { background-color: var(--bs-accent); color: white; transform: translateY(-2px); }
+
+    /* Fixed Navbar */
+    .fixed-navbar-top {
+      position: fixed;
+      top: 1.5rem;
+      left: 0;
+      right: 0;
+      z-index: 1030;
+      display: flex;
+      justify-content: center;
+      pointer-events: none;
+    }
+    .navbar-custom {
+      background: var(--navbar-glass);
+      backdrop-filter: blur(16px);
+      border-radius: 100px !important;
+      padding: 0.4rem 1rem;
+      border: 1px solid rgba(194, 36, 55, 0.35);
+      box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.5);
+      width: auto;
+      min-width: 280px;
+      pointer-events: auto;
+    }
+    @media (min-width: 992px) { .navbar-custom { padding: 0.4rem 1.8rem; } }
+    .navbar-brand-logo { font-family: 'Quicksand', sans-serif; font-weight: 800; font-size: 1.6rem; color: white !important; }
+    .navbar-brand-logo span { color: var(--bs-accent); }
+    .navbar-custom .nav-link { font-weight: 500; color: #eef2ff; padding: 0.5rem 1rem; position: relative; }
+    .navbar-custom .nav-link.active { color: var(--bs-accent) !important; background: transparent; }
+    .navbar-custom .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0px;
+      left: 1rem;
+      right: 1rem;
+      height: 2.5px;
+      background-color: var(--bs-accent);
+      border-radius: 4px;
+    }
+    .navbar-custom .nav-link:hover { color: var(--bs-accent) !important; }
+    .btn-get-started {
+      background: transparent;
+      border: 1.5px solid var(--bs-accent);
+      color: var(--bs-accent);
+      border-radius: 40px;
+      padding: 0.4rem 1.2rem;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+    }
+    .btn-get-started:hover { background: var(--bs-accent); color: white; }
+    @media (max-width: 991px) {
+      .navbar-custom { border-radius: 28px !important; width: calc(100% - 2rem); margin: 0 1rem; }
+      body { padding-top: 85px; }
+    }
+
+    /* Section Styles */
+    .section-padding { padding: 100px 0 90px; }
+    .hero-section { min-height: 85vh; display: flex; align-items: center; }
+    .section-title {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+    }
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 0;
+      width: 70px;
+      height: 4px;
+      background: var(--bs-accent);
+      border-radius: 4px;
+    }
+    .glass-card {
+      background: var(--card-glass);
+      backdrop-filter: blur(8px);
+      border-radius: 32px;
+      border: 1px solid rgba(194, 36, 55, 0.25);
+      transition: all 0.3s;
+      padding: 1.8rem;
+      height: 100%;
+    }
+    footer { background: #020417; border-top: 1px solid rgba(194, 36, 55, 0.3); padding: 2rem 0; margin-top: 2rem; }
+    html { scroll-padding-top: 110px; }
+
+    /* Owl Carousel Custom Styling for Reviews */
+    .reviews-section {
+      background: linear-gradient(135deg, #05071e 0%, #0a0e2a 50%, #05071e 100%);
+      position: relative;
+    }
+    .review-card {
+      background: linear-gradient(145deg, rgba(10, 14, 40, 0.9), rgba(5, 7, 30, 0.95));
+      backdrop-filter: blur(8px);
+      border-radius: 32px;
+      border: 1px solid rgba(194, 36, 55, 0.3);
+      padding: 2rem;
+      margin: 0.5rem;
+      transition: all 0.3s;
+      height: auto;
+    }
+    .review-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--bs-accent);
+      box-shadow: 0 20px 35px -12px rgba(194,36,55,0.25);
+    }
+    .review-stars {
+      color: #FFB800;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      letter-spacing: 3px;
+    }
+    .review-text {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      opacity: 0.9;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+    .reviewer-info {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      border-top: 1px solid rgba(194,36,55,0.2);
+      padding-top: 1rem;
+    }
+    .reviewer-avatar {
+      width: 48px;
+      height: 48px;
+      background: rgba(194,36,55,0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      color: var(--bs-accent);
+    }
+    .reviewer-name {
+      font-weight: 700;
+      margin-bottom: 0;
+    }
+    .reviewer-title {
+      font-size: 0.7rem;
+      opacity: 0.6;
+      margin-bottom: 0;
+    }
+    /* Owl Carousel Overrides */
+    .owl-theme .owl-dots .owl-dot span {
+      background: rgba(194,36,55,0.3);
+      width: 10px;
+      height: 10px;
+      margin: 0 5px;
+      transition: all 0.2s;
+    }
+    .owl-theme .owl-dots .owl-dot.active span,
+    .owl-theme .owl-dots .owl-dot:hover span {
+      background: var(--bs-accent);
+      transform: scale(1.2);
+    }
+    .owl-theme .owl-nav {
+      margin-top: 1.5rem;
+    }
+    .owl-theme .owl-nav [class*=owl-] {
+      background: rgba(194,36,55,0.2);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      transition: all 0.2s;
+      color: var(--bs-accent);
+    }
+    .owl-theme .owl-nav [class*=owl-]:hover {
+      background: var(--bs-accent);
+      color: white;
+    }
+    @media (max-width: 768px) {
+      .review-card { padding: 1.2rem; }
+      .review-text { font-size: 0.85rem; }
+      .section-title { font-size: 2rem; }
+    }
+
+    /* Other section styles */
+    .service-icon { font-size: 2.8rem; color: var(--bs-accent); margin-bottom: 1.2rem; }
+    .advertiser-container {
+      background: linear-gradient(145deg, rgba(10, 14, 40, 0.8), rgba(5, 7, 30, 0.9));
+      backdrop-filter: blur(8px);
+      border-radius: 56px;
+      border: 1px solid rgba(194, 36, 55, 0.3);
+      overflow: hidden;
+    }
+    .advertiser-content { padding: 3rem; }
+    .pointing-image-wrapper { position: relative; min-height: 400px; display: flex; align-items: center; justify-content: center; }
+    .pointing-img { max-width: 90%; border-radius: 32px; box-shadow: 0 25px 40px -15px rgba(0,0,0,0.5); }
+    .float-card-top, .float-card-bottom {
+      position: absolute;
+      background: rgba(5,7,30,0.85);
+      backdrop-filter: blur(12px);
+      border-radius: 28px;
+      padding: 0.8rem 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      z-index: 10;
+      animation: floatUpDown 3s ease-in-out infinite;
+    }
+    .float-card-top { top: 10px; left: 5px; border-left: 4px solid var(--bs-accent); }
+    .float-card-bottom { bottom: 20px; right: 10px; border-right: 4px solid var(--bs-accent); animation: floatUpDown 3.5s ease-in-out infinite reverse; }
+    @keyframes floatUpDown {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+      100% { transform: translateY(0px); }
+    }
+    .about-points { list-style: none; padding-left: 0; }
+    .about-points li { margin-bottom: 0.9rem; display: flex; align-items: center; gap: 0.75rem; }
+    .about-points li i { color: var(--bs-accent); font-size: 1.3rem; }
+    @media (max-width: 991px) {
+      .advertiser-content { padding: 2rem; }
+      .float-card-top, .float-card-bottom { padding: 0.5rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="fixed-navbar-top">
+    <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-custom">
+      <div class="container-fluid px-2 px-lg-3">
+        <a class="navbar-brand-logo text-decoration-none" href="#home">Lynktrix<span>™</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCenteredContent">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCenteredContent">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="#advertisers">Advertisers</a></li>
+            <li class="nav-item"><a class="nav-link" href="#publishers">Publishers</a></li>
+            <li class="nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about-us">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          </ul>
+          <div class="d-flex"><a href="#contact" class="btn-get-started text-decoration-none">Get Started <i class="bi bi-arrow-right-short"></i></a></div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="hero-section section-padding pt-0">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-7">
+            <span class="badge bg-accent mb-3 px-3 py-2 rounded-pill">✦ Performance Marketing</span>
+            <h1 class="display-3 fw-bold mb-4">Lynktrix — <span class="text-accent">Connect</span> with Top Publishers</h1>
+            <p class="lead mb-4 opacity-75">Drive high-quality traffic, scale your campaigns, and pay only for performance.</p>
+            <div class="d-flex flex-wrap gap-3">
+              <a href="#advertisers" class="btn btn-accent px-4 py-2 rounded-pill">Advertise Now <i class="bi bi-graph-up ms-1"></i></a>
+              <a href="#contact" class="btn btn-outline-accent rounded-pill px-4 py-2">Talk to Experts</a>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="glass-card p-4 text-center">
+              <i class="bi bi-megaphone-fill" style="font-size: 3rem; color: #C22437;"></i>
+              <h3 class="mt-3">2000+ Active Publishers</h3>
+              <p class="mb-0">Reach millions of targeted users</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section-padding" style="background: radial-gradient(circle at 10% 20%, rgba(194,36,55,0.05) 0%, rgba(5,7,30,1) 90%);">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-title">Why Choose Lynktrix</h2>
+          <p class="mt-4 opacity-75 w-75 mx-auto">Performance-driven solutions for modern advertisers</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="glass-card text-center">
+              <div class="service-icon"><i class="bi bi-target"></i></div>
+              <h3>Precise Targeting</h3>
+              <p>Geo, device, carrier, and audience segmentation for maximum ROI.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="glass-card text-center">
+              <div class="service-icon"><i class="bi bi-credit-card"></i></div>
+              <h3>Flexible Billing</h3>
+              <p>CPA, CPL, RevShare — choose what works for your campaign goals.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="glass-card text-center">
+              <div class="service-icon"><i class="bi bi-bar-chart-line"></i></div>
+              <h3>Real-Time Analytics</h3>
+              <p>Track conversions, optimize on the fly with live reporting.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Advertisers Section -->
+    <section id="advertisers" class="section-padding">
+      <div class="container">
+        <div class="advertiser-container">
+          <div class="row g-0 align-items-stretch">
+            <div class="col-lg-6">
+              <div class="advertiser-content">
+                <span class="badge bg-accent mb-3 px-3 py-2 rounded-pill">✦ For Advertisers</span>
+                <h2 class="advertiser-heading" style="font-size: 2.5rem; font-weight: 800;">Improve Your Marketing <br>with <span class="text-accent">Lynktrix</span></h2>
+                <p class="advertiser-text">Stop wasting budget on untargeted traffic. Our network connects you with vetted publishers who deliver real users, real conversions, and real growth.</p>
+                <p class="advertiser-text">From finance to e-commerce, health to gaming — we have the right partners to scale your campaigns. Pay only for results with our transparent CPA/CPL models.</p>
+                <a href="#contact" class="btn btn-accent advertiser-btn" style="padding: 0.8rem 2rem; border-radius: 50px; display: inline-flex; gap: 10px;">Start Your Campaign <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="pointing-image-wrapper">
+                <div class="float-card-top"><div class="float-icon"><i class="bi bi-graph-up"></i></div><div><h6 style="margin:0">+156% ROI</h6><p style="margin:0; font-size:0.7rem">Avg. uplift</p></div></div>
+                <div class="float-card-bottom"><div class="float-icon"><i class="bi bi-people"></i></div><div><h6 style="margin:0">2M+ Daily</h6><p style="margin:0; font-size:0.7rem">Impressions</p></div></div>
+                <img src="https://placehold.co/800x900/1a1f3a/C22437?text=👩‍💼+Pointing" class="pointing-img">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Publishers Section -->
+    <section id="publishers" class="section-padding">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-title">For Publishers</h2>
+          <p class="mt-4 opacity-75">Monetize your traffic with premium offers</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4"><div class="glass-card text-center p-4"><i class="bi bi-cash-stack fs-1 text-accent"></i><h3 class="mt-3">High Commissions</h3><p>Up to 45% revshare + CPA deals</p></div></div>
+          <div class="col-md-4"><div class="glass-card text-center p-4"><i class="bi bi-wallet2 fs-1 text-accent"></i><h3>Weekly Payouts</h3><p>No minimum threshold, crypto & wire</p></div></div>
+          <div class="col-md-4"><div class="glass-card text-center p-4"><i class="bi bi-robot fs-1 text-accent"></i><h3>AI Smartlinks</h3><p>Auto-optimize for highest EPC</p></div></div>
+        </div>
+        <div class="text-center mt-4"><a href="#contact" class="btn btn-outline-accent rounded-pill px-4">Become a Publisher →</a></div>
+      </div>
+    </section>
+
+    <!-- ========== REVIEWS SECTION — OWL CAROUSEL, 3 VISIBLE, AUTO SLIDE ========== -->
+    <section id="reviews" class="reviews-section section-padding">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-title">What Our Clients Say</h2>
+          <p class="mt-4 opacity-75 w-75 mx-auto">Trusted by 2000+ advertisers and publishers worldwide</p>
+        </div>
+        <div class="owl-carousel owl-theme" id="reviewsCarousel">
+          <!-- Review 1 -->
+          <div class="item">
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"Lynktrix completely transformed our affiliate marketing strategy. The ROI we've seen in just 3 months is incredible. Their support team is always available and genuinely cares about our success."</p>
+              <div class="reviewer-info">
+                <div class="reviewer-avatar"><i class="bi bi-person-circle"></i></div>
+                <div><h6 class="reviewer-name">Michael Chen</h6><p class="reviewer-title">Advertiser, Finance Vertical</p></div>
+              </div>
+            </div>
+          </div>
+          <!-- Review 2 -->
+          <div class="item">
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"As a publisher, finding a network that pays on time and has high-converting offers is rare. Lynktrix delivers both. Weekly payouts and dedicated account management make them #1."</p>
+              <div class="reviewer-info">
+                <div class="reviewer-avatar"><i class="bi bi-person-circle"></i></div>
+                <div><h6 class="reviewer-name">Sarah Johnson</h6><p class="reviewer-title">Publisher, 3+ Years</p></div>
+              </div>
+            </div>
+          </div>
+          <!-- Review 3 -->
+          <div class="item">
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"The AI smartlink technology is a game-changer. My EPC increased by 40% within weeks. Lynktrix is hands-down the best affiliate network I've worked with."</p>
+              <div class="reviewer-info">
+                <div class="reviewer-avatar"><i class="bi bi-person-circle"></i></div>
+                <div><h6 class="reviewer-name">David Williams</h6><p class="reviewer-title">Super Affiliate</p></div>
+              </div>
+            </div>
+          </div>
+          <!-- Review 4 -->
+          <div class="item">
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"Outstanding platform! The real-time analytics and dedicated support have helped us scale our campaigns across 5 countries. Highly recommended for serious advertisers."</p>
+              <div class="reviewer-info">
+                <div class="reviewer-avatar"><i class="bi bi-person-circle"></i></div>
+                <div><h6 class="reviewer-name">Emma Rodriguez</h6><p class="reviewer-title">Media Buyer</p></div>
+              </div>
+            </div>
+          </div>
+          <!-- Review 5 -->
+          <div class="item">
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"Lynktrix's team goes above and beyond. From onboarding to optimization, they've been incredible partners. Our ROI has never been better."</p>
+              <div class="reviewer-info">
+                <div class="reviewer-avatar"><i class="bi bi-person-circle"></i></div>
+                <div><h6 class="reviewer-name">James Kim</h6><p class="reviewer-title">E-commerce Brand</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about-us" class="section-padding" style="background: rgba(194,36,55,0.02);">
+      <div class="container">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-6">
+            <span class="badge bg-accent mb-3 px-3 py-2 rounded-pill">Our Story</span>
+            <h2 style="font-size: 2.5rem; font-weight: 700;">Connecting <span class="text-accent">brands & publishers</span> seamlessly</h2>
+            <p class="mt-3 opacity-75">Founded in 2020, Lynktrix has grown into a trusted performance marketing network with a simple mission: make affiliate marketing transparent, profitable, and easy for everyone.</p>
+            <ul class="about-points mt-4">
+              <li><i class="bi bi-check-lg"></i> <strong>100% transparent reporting</strong> — No hidden fees</li>
+              <li><i class="bi bi-check-lg"></i> <strong>Dedicated account team</strong> — Strategy & optimization</li>
+              <li><i class="bi bi-check-lg"></i> <strong>Global compliance</strong> — GDPR & CCPA ready</li>
+            </ul>
+            <div class="mt-4"><a href="#contact" class="btn btn-accent rounded-pill px-4">Partner with us <i class="bi bi-arrow-right"></i></a></div>
+          </div>
+          <div class="col-lg-6">
+            <div class="position-relative">
+              <img src="https://placehold.co/800x600/1a1f3a/C22437?text=Lynktrix+Team" class="w-100 rounded-4" style="border: 1px solid rgba(194,36,55,0.3);">
+              <div class="position-absolute bottom-0 start-0 translate-middle-y ms-3 mb-2 bg-dark rounded-4 p-3 border-start border-4 border-accent" style="background: rgba(5,7,30,0.9); backdrop-filter: blur(8px);">
+                <div class="d-flex gap-3"><div><span class="fw-bold text-accent">$15M+</span><br><small>Ad Spend</small></div><div><span class="fw-bold text-accent">98%</span><br><small>Retention</small></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-title">Ready to Scale?</h2>
+          <p class="mt-4 opacity-75">Whether you're an advertiser or publisher — let's talk</p>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="glass-card p-4 p-md-5">
+              <form>
+                <div class="row g-4">
+                  <div class="col-md-6"><input type="text" class="form-control bg-transparent border-secondary text-white" placeholder="Full name"></div>
+                  <div class="col-md-6"><input type="email" class="form-control bg-transparent border-secondary text-white" placeholder="Email address"></div>
+                  <div class="col-12"><select class="form-select bg-transparent border-secondary text-white"><option selected class="text-dark">I am a...</option><option>Advertiser</option><option>Publisher</option></select></div>
+                  <div class="col-12"><textarea rows="3" class="form-control bg-transparent border-secondary text-white" placeholder="Tell us about your goals..."></textarea></div>
+                  <div class="col-12 text-center">
+                    <button type="button" class="btn btn-accent px-5 py-2 rounded-pill" onclick="alert('🚀 Thanks! A Lynktrix specialist will contact you within 24 hours.')">Get Started <i class="bi bi-send ms-1"></i></button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-md-6 mb-3 mb-md-0"><span class="text-accent fw-bold">✦</span> Lynktrix — Performance Marketing Network</div>
+        <div class="col-md-6"><div class="d-flex justify-content-center justify-content-md-end gap-3"><a href="#" class="text-white-50"><i class="bi bi-twitter-x"></i></a><a href="#" class="text-white-50"><i class="bi bi-linkedin"></i></a><a href="#" class="text-white-50"><i class="bi bi-envelope"></i></a></div></div>
+      </div>
+      <div class="mt-3 small opacity-50">© 2025 Lynktrix — Improve your marketing, scale your revenue</div>
+    </div>
+  </footer>
+
+  <!-- Scripts: jQuery, Owl Carousel, Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Initialize Owl Carousel for Reviews
+    $(document).ready(function(){
+      $("#reviewsCarousel").owlCarousel({
+        loop: true,
+        margin: 20,
+        nav: true,
+        dots: true,
+        autoplay: true,
+        autoplayTimeout: 4000,
+        autoplayHoverPause: true,
+        responsive: {
+          0: { items: 1 },
+          768: { items: 2 },
+          992: { items: 3 }
+        },
+        navText: ['<i class="bi bi-chevron-left"></i>', '<i class="bi bi-chevron-right"></i>']
+      });
+    });
+
+    // Active section highlight for navbar
+    (function() {
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.navbar-custom .nav-link');
+      function updateActiveSection() {
+        let current = '';
+        const pos = window.scrollY + 120;
+        sections.forEach(section => {
+          const top = section.offsetTop - 100;
+          const bottom = top + section.offsetHeight;
+          if (pos >= top && pos < bottom) current = section.id;
+        });
+        if (!current && window.scrollY < 80) current = 'home';
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 15 && sections.length) current = sections[sections.length-1].id;
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${current}`) link.classList.add('active');
+        });
+      }
+      navLinks.forEach(link => link.addEventListener('click', function(e) {
+        const target = this.getAttribute('href');
+        if (target && target.startsWith('#')) {
+          e.preventDefault();
+          const el = document.querySelector(target);
+          if (el) window.scrollTo({ top: el.offsetTop - 90, behavior: 'smooth' });
+          navLinks.forEach(l => l.classList.remove('active'));
+          this.classList.add('active');
+        }
+      }));
+      window.addEventListener('scroll', () => requestAnimationFrame(updateActiveSection));
+      window.addEventListener('load', updateActiveSection);
+    })();
+  </script>
+</body>
+</html>

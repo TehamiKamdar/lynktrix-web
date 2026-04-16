@@ -295,7 +295,7 @@ h6,
   box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.5);
 }
 
-#services h3{
+#services h3 {
   min-height: 56px;
 }
 
@@ -726,7 +726,7 @@ html {
   margin-top: 1rem;
 }
 
-.btn{
+.btn {
   padding: 0.9rem;
   font-size: 1rem;
 }
@@ -954,5 +954,121 @@ html {
     width: 28px;
     height: 28px;
     font-size: 0.85rem;
+  }
+}
+
+/* ========== REVIEWS SECTION WITH OWL CAROUSEL ========== */
+.review-card {
+  background: linear-gradient(145deg, rgba(10, 14, 40, 0.9), rgba(5, 7, 30, 0.95));
+  backdrop-filter: blur(8px);
+  border-radius: 32px;
+  border: 1px solid rgba(194, 36, 55, 0.3);
+  padding: 1.5rem 2rem;
+  margin: 0.5rem;
+  transition: all 0.3s;
+  height: auto;
+}
+
+.review-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--bs-accent);
+  box-shadow: 0 20px 35px -12px rgba(194, 36, 55, 0.25);
+}
+
+.review-stars {
+  color: #C22437;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  letter-spacing: 3px;
+}
+
+.review-text {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: .5rem;
+  font-style: italic;
+  min-height: 105px;
+}
+
+.reviewer-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-top: 1px solid rgba(194, 36, 55, 0.2);
+  padding-top: 1rem;
+}
+
+.reviewer-avatar {
+  width: 48px;
+  height: 48px;
+  background: rgba(194, 36, 55, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: var(--bs-accent);
+}
+
+.reviewer-name {
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.reviewer-title {
+  font-size: 0.7rem;
+  opacity: 0.6;
+  margin-bottom: 0;
+}
+
+/* Owl Carousel Overrides */
+.owl-theme .owl-dots .owl-dot span {
+  background: rgba(194, 36, 55, 0.3);
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  transition: all 0.2s;
+}
+
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+  background: var(--bs-accent);
+  transform: scale(1.2);
+}
+
+.owl-theme .owl-nav {
+  margin-top: 1.5rem;
+}
+
+.owl-theme .owl-nav [class*=owl-] {
+  background: rgba(194, 36, 55, 0.2);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: all 0.2s;
+  color: var(--bs-accent);
+}
+
+.owl-theme .owl-nav [class*=owl-]:hover {
+  background: var(--bs-accent);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .review-card {
+    padding: 1.2rem;
+  }
+
+  .review-text {
+    font-size: 0.85rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
   }
 }
