@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Velvet Edge | Fixed Navbar + Underline Active</title>
+  <!-- Google Fonts: Poppins (body) + Quicksand (headings) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Bootstrap 5 CSS + Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="./bootstrap-material.css">
+  <link rel="stylesheet" href="./remixicons/remixicon.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <!-- FIXED NAVBAR (pill shape, glass effect) -->
+  <div class="fixed-navbar-top">
+    <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-custom">
+      <div class="container-fluid px-2 px-lg-3">
+        <!-- LEFT SIDE: Logo -->
+        <a class="navbar-brand-logo text-decoration-none" href="#home">
+          <span>Lynk</span>trix
+        </a>
+        
+        <!-- Toggler for mobile -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCenteredContent" aria-controls="navbarCenteredContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <!-- CENTERED NAVIGATION + RIGHT SIDE BUTTON -->
+        <div class="collapse navbar-collapse" id="navbarCenteredContent">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#publishers">Publishers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#advertisers">Advertisers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+          <!-- RIGHT SIDE: Get Started button -->
+          <div class="d-flex">
+            <a href="#contact" class="btn-get-started text-decoration-none">Get Started <i class="bi bi-arrow-right-short"></i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+The No. 1 leading Affiliate Marketing Partner
+  <main>
+    <!-- HERO SECTION (home) -->
+    <section id="home" class="hero-section section-padding pt-0">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-7">
+            <span class="badge bg-accent mb-3 px-3 py-2 rounded-pill">✦ Digital Excellence</span>
+            <h1 class="display-3 fw-bold mb-4">The <span class="text-accent"> No. 1 </span> leading Affiliate Marketing Partner</h1>
+            <p class="lead mb-4 opacity-75">Join us as an affiliate to unleash your unlimited potential.</p>
+            <div class="d-flex flex-wrap gap-3">
+              <a href="#services" class="btn btn-accent px-4 py-2 rounded-pill">Explore Now <i class="ri-play-fill ms-1"></i></a>
+              <a href="#contact" class="btn btn-outline-accent rounded-pill px-4 py-2">Join Now</a>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="glass-card p-4 text-center">
+              <i class="bi bi-gem" style="font-size: 3rem; color: #C22437;"></i>
+              <h3 class="mt-3">Dynamic + bold</h3>
+              <p class="mb-0">Accent-driven design, fixed navbar, and underline active state.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="section-padding bg-opacity-10" style="background: radial-gradient(circle at 10% 20%, rgba(194,36,55,0.05) 0%, rgba(5,7,30,1) 90%);">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-title">Our Services</h2>
+          <p class="mt-4 opacity-75 w-75 mx-auto">Precision-crafted solutions with a touch of modern elegance.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <div class="glass-card text-center">
+              <div class="service-icon"><i class="bi bi-brush"></i></div>
+              <h3>UI/UX Design</h3>
+              <p>Immersive interfaces with high conversion focus and unique identity.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="glass-card text-center">
+              <div class="service-icon"><i class="bi bi-code-square"></i></div>
+              <h3>Development</h3>
+              <p>Modern frontend & backend, using Bootstrap 5 and smooth interactions.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="glass-card text-center">
+              <div class="service-icon"><i class="bi bi-graph-up"></i></div>
+              <h3>Performance SEO</h3>
+              <p>Rank higher and deliver blazing fast experiences on all devices.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO SECTION -->
+    <section id="portfolio" class="section-padding">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-title">Featured projects</h2>
+          <p class="mt-4 opacity-75">Selected works that reflect the synergy of bold aesthetics & functionality.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <div class="glass-card p-0 overflow-hidden rounded-4">
+              <div class="p-4 pb-3">
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="badge bg-accent">Brand identity</span>
+                  <i class="bi bi-box-arrow-up-right text-accent fs-5"></i>
+                </div>
+                <h3 class="mt-3 fs-4">Crimson Studio</h3>
+                <p class="small opacity-75">Full rebrand & web presence with accent-driven visuals.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="glass-card p-0 overflow-hidden rounded-4">
+              <div class="p-4 pb-3">
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="badge bg-accent">Web App</span>
+                  <i class="bi bi-stars text-accent fs-5"></i>
+                </div>
+                <h3 class="mt-3 fs-4">Nexus Dashboard</h3>
+                <p class="small opacity-75">Data-heavy platform with intuitive design & smooth interactions.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="glass-card p-0 overflow-hidden rounded-4">
+              <div class="p-4 pb-3">
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="badge bg-accent">E‑commerce</span>
+                  <i class="bi bi-cart-check text-accent fs-5"></i>
+                </div>
+                <h3 class="mt-3 fs-4">Lunar Boutique</h3>
+                <p class="small opacity-75">Conversion-focused store with unique dark-accent theme.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section-padding" style="background: rgba(194,36,55,0.02);">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <h2 class="section-title mb-4">Who we are</h2>
+            <p class="mb-3">We are a creative collective that believes in bold, human-centric design. Our accent color <strong class="text-accent">#C22437</strong> reflects passion and action, while our dark canvas <strong class="text-accent">#05071e</strong> invites depth and focus.</p>
+            <p class="mb-4">Every line of code, every UI decision, respects your brand story. Our mission is to deliver modern, future-proof experiences.</p>
+            <div class="d-flex gap-4">
+              <div><i class="bi bi-check-circle-fill text-accent me-2"></i> Award winning team</div>
+              <div><i class="bi bi-check-circle-fill text-accent me-2"></i> 50+ projects</div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="glass-card p-4">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <i class="bi bi-quote fs-1 text-accent"></i>
+                <h4 class="mb-0">Innovation meets elegance</h4>
+              </div>
+              <p class="mb-0">Our philosophy merges advanced technology and human emotion to craft digital solutions that resonate deeply with audiences across the globe.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section-padding">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-title">Let's connect</h2>
+          <p class="mt-4 opacity-75">Ready to elevate your digital presence? Reach out and let's create something extraordinary.</p>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="glass-card p-4 p-md-5">
+              <form id="demoContactForm" action="#" method="post">
+                <div class="row g-4">
+                  <div class="col-md-6">
+                    <label class="form-label">Full name</label>
+                    <input type="text" class="form-control bg-transparent border-secondary text-white" style="border-color: rgba(194,36,55,0.4);" placeholder="Alex Rivera">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Email address</label>
+                    <input type="email" class="form-control bg-transparent border-secondary text-white" style="border-color: rgba(194,36,55,0.4);" placeholder="hello@domain.com">
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">Message</label>
+                    <textarea rows="4" class="form-control bg-transparent border-secondary text-white" style="border-color: rgba(194,36,55,0.4);" placeholder="Tell us about your vision..."></textarea>
+                  </div>
+                  <div class="col-12 text-center">
+                    <button type="button" class="btn btn-accent px-5 py-2 rounded-pill" onclick="alert('✨ Thanks for reaching out! This is a demo template with fixed navbar and underline active.')">Send message <i class="bi bi-send ms-1"></i></button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container text-center">
+      <div class="row align-items-center">
+        <div class="col-md-6 mb-3 mb-md-0">
+          <span class="text-accent fw-bold">✦</span> Velvet Edge — bold identity with <span style="color:#C22437">#C22437</span> on deep <span style="color:#a0b0e0">#05071e</span>
+        </div>
+        <div class="col-md-6">
+          <div class="d-flex justify-content-center justify-content-md-end gap-3">
+            <a href="#" class="text-white-50 text-decoration-none"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="text-white-50 text-decoration-none"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-white-50 text-decoration-none"><i class="bi bi-github"></i></a>
+            <a href="#" class="text-white-50 text-decoration-none"><i class="bi bi-dribbble"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="mt-3 small opacity-50">© 2025 — Fixed navbar, active link underline & brand logo.</div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS + Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Custom active link: underline only + update on scroll, with manual detection and also smooth scroll -->
+  <script src="script.js"></script>
+</body>
+</html>
