@@ -59,6 +59,17 @@
           }
         }
       }
+
+      function getQuarter(month) {
+          return Math.floor(month / 3) + 1;
+      }
+
+      const now = new Date();
+      const year = now.getFullYear();
+      const quarter = getQuarter(now.getMonth());
+
+      document.getElementById("quarterText").innerText =
+          `Limited slots for Q${quarter} ${year} — Apply today`;
       
       // attach click listeners
       navLinks.forEach(link => {
