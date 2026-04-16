@@ -1072,3 +1072,147 @@ html {
     font-size: 2rem;
   }
 }
+
+/* ========== CONTACT SECTION — TWO COLUMN LAYOUT WITH BACKGROUND IMAGE ========== */
+
+.contact-container {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* 👇 background layer */
+.contact-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('../images/dotted-world-1.webp') center/cover no-repeat;
+  opacity: 0.15; /* 👈 yahan control karo opacity */
+  z-index: 0;
+}
+
+/* 👇 content above background */
+.contact-container > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Left Column - Form */
+.contact-form-col {
+  padding: 2.5rem;
+}
+
+.form-control::placeholder{
+  color: #727272;
+}
+
+.form-control{
+  border: 2px solid #ccc;
+}
+
+.form-control:focus{
+  border: 2px solid #C22437;
+  box-shadow: none !important;
+}
+
+.detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.8rem;
+  transition: all 0.2s;
+}
+
+.detail-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(194, 36, 55, 0.2);
+  border-radius: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: var(--bs-accent);
+  transition: all 0.2s;
+}
+
+.detail-text h5 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.detail-text p {
+  font-size: 0.85rem;
+  opacity: 0.75;
+  margin-bottom: 0;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(194, 36, 55, 0.2);
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  background: rgba(194, 36, 55, 0.12);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: var(--bs-body-color);
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  background: var(--bs-accent);
+  color: white;
+  transform: translateY(-3px);
+}
+
+.contact-badge {
+  display: inline-block;
+  background: rgba(194, 36, 55, 0.2);
+  border-radius: 100px;
+  padding: 0.3rem 1rem;
+  font-size: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(194, 36, 55, 0.4);
+}
+
+@media (max-width: 991px) {
+
+  .contact-form-col,
+  .contact-details-col {
+    padding: 1.8rem;
+  }
+
+  .contact-details-col {
+    border-left: none;
+    border-top: 1px solid rgba(194, 36, 55, 0.2);
+  }
+}
+
+@media (max-width: 576px) {
+
+  .contact-form-col,
+  .contact-details-col {
+    padding: 1.2rem;
+  }
+
+  .detail-item {
+    margin-bottom: 1.2rem;
+  }
+
+  .detail-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+}
