@@ -379,7 +379,7 @@ h6,
 .metric-cards-wrapper {
   position: absolute;
   top: -25px;
-  right: 50px;
+  right: 100px;
   display: flex;
   flex-direction: row;
   z-index: 10;
@@ -424,7 +424,15 @@ html {
 }
 
 @media (max-width: 768px) {
-  .section-padding {
+  .navbar-brand-logo .img-fluid{
+    height: 35px !important;
+  }
+
+  .hero-section.section {
+    margin: 40px 0 0;
+  }
+
+  .section {
     padding: 70px 0 60px;
   }
 
@@ -444,9 +452,15 @@ html {
   }
 
   .metric-cards-wrapper {
-    top: -15px;
-    right: -5px;
-    max-width: 140px;
+    position: relative;
+    top: auto;
+    right: auto;
+    flex-direction: row;
+    max-width: 100%;
+    justify-content: end;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
   }
 
   .about-image-overlap {
@@ -461,17 +475,6 @@ html {
 }
 
 @media (max-width: 576px) {
-  .metric-cards-wrapper {
-    position: relative;
-    top: auto;
-    right: auto;
-    flex-direction: row;
-    max-width: 100%;
-    justify-content: space-between;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    flex-wrap: wrap;
-  }
 
   .about-image-overlap {
     position: relative;
@@ -505,7 +508,7 @@ html {
   }
 
   .about-image-overlap {
-    margin-top: -40px;
+    margin-top: -120px;
     margin-bottom: 1rem;
     width: 50%;
     align-self: flex-start;
